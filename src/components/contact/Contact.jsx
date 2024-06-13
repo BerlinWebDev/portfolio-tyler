@@ -29,6 +29,8 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs
+      .sendForm("xxxx", "xxx", form.current, {
+        publicKey: "xxx",
       })
       .then(
         () => {
