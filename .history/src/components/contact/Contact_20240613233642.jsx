@@ -29,15 +29,9 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm(
-        import.meta.env.VITE_EMAIL_SERVICE_ID,
-        import.meta.env.VITE_EMAIL_TEMPLATE_ID,
-        form.current,
-
-        {
-          publicKey: import.meta.env.VITE_EMAIL_PUBLIC_KEY,
-        }
-      )
+      .sendForm("xxxx", "xxx", form.current, {
+        publicKey: "xxx",
+      })
       .then(
         () => {
           setSuccess(true);
@@ -74,13 +68,12 @@ const Contact = () => {
       </motion.div>
       <div className="formContainer">
         <motion.form ref={form} onSubmit={sendEmail}>
-          {error &&
-            "There was an error sending your message! Please try again."}
-          {success && "Your Message was delivered successfully!"}
           <input type="text" required placeholder="Name" name="name" />
           <input type="email" required placeholder="Email" name="email" />
           <textarea rows={8} placeholder="Message" name="message" />
           <button type="submit">Submit</button>
+          {error && "Error"}
+          {success && "Success"}
         </motion.form>
       </div>
     </motion.div>

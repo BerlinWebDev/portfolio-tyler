@@ -74,13 +74,13 @@ const Contact = () => {
       </motion.div>
       <div className="formContainer">
         <motion.form ref={form} onSubmit={sendEmail}>
-          {error &&
-            "There was an error sending your message! Please try again."}
-          {success && "Your Message was delivered successfully!"}
           <input type="text" required placeholder="Name" name="name" />
           <input type="email" required placeholder="Email" name="email" />
           <textarea rows={8} placeholder="Message" name="message" />
           <button type="submit">Submit</button>
+          {error &&
+            "There was an error sending your message! Please try again."}
+          {success && "Your Message was delivered successfully!"}
         </motion.form>
       </div>
     </motion.div>
